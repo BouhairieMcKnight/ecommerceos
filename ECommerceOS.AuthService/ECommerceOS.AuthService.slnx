@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="ECommerceOS.AuthService.Application/ECommerceOS.AuthService.Application.csproj" />
+  <Project Path="ECommerceOS.AuthService.Domain/ECommerceOS.AuthService.Domain.csproj" />
+  <Project Path="ECommerceOS.AuthService.Infrastructure/ECommerceOS.AuthService.Infrastructure.csproj" />
+  <Project Path="ECommerceOS.AuthService.Presentation\ECommerceOS.AuthService.Presentation.csproj" />
+  <Project Path="ECommerceOS.AuthService.WebApi\ECommerceOS.AuthService.WebApi.csproj" />
+</Solution>

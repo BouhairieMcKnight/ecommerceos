@@ -1,0 +1,174 @@
+{
+  "type": "record",
+  "name": "OrderEvent",
+  "displayName": "Order Event",
+  "namespace": "ECommerceOS.Shared.Contracts.Messaging.Order",
+  "fields": [
+    { "name": "MessageId", "displayName": "Event ID", "type": { "type": "string", "logicalType": "uuid" } },
+    {
+      "name": "ProcessedOn",
+      "type": [
+        "null",
+        {
+          "type": "long",
+          "logicalType": "timestamp-millis"
+        }
+      ],
+      "default": null
+    },
+    { "name": "Type", "type": "string" },
+    { "name": "IntegrationEvent",
+      "type": [
+        {
+          "type": "record",
+          "name": "OrderCancelled",
+          "displayName": "Order Cancelled",
+          "namespace": "ECommerceOS.Shared.Contracts.Messaging.Order",
+          "fields": [
+            { "name": "OrderId", "type": { "type": "string", "logicalType": "uuid" } },
+            { "name": "TransactionId", "type": { "type": "string", "logicalType": "uuid" } },
+            { "name": "CustomerId", "type": { "type": "string", "logicalType": "uuid" } },
+            {
+              "name": "OrderItems",
+              "displayName": "Order Items",
+              "type": {
+                "type": "array",
+                "items": {
+                  "type": "record",
+                  "name": "CheckoutDto",
+                  "displayName": "Checkout Item",
+                  "namespace": "ECommerceOS.Shared.DTOs",
+                  "fields": [
+                    { "name": "ProductId", "type": { "type": "string", "logicalType": "uuid" } },
+                    { "name": "SellerId", "type": { "type": "string", "logicalType": "uuid" } },
+                    { "name": "ImageUrl", "type": "string" },
+                    { "name": "Name", "type": "string" },
+                    { "name": "Description", "type": "string" },
+                    { "name": "Cost", "type": "string" },
+                    { "name": "Quantity", "type": "int" }
+                  ]
+                }
+              },
+              "default": []
+            },
+            { "name": "Reason", "type": ["null", "string"], "default": null },
+            { "name": "Version", "type": "int" },
+            { "name": "CreatedAt", "type": { "type": "long", "logicalType": "timestamp-millis" } }
+          ]
+        },
+        {
+          "type": "record",
+          "name": "OrderSubmitted",
+          "displayName": "Order Submitted",
+          "namespace": "ECommerceOS.Shared.Contracts.Messaging.Order",
+          "fields": [
+            { "name": "OrderId", "type": { "type": "string", "logicalType": "uuid" } },
+            { "name": "TransactionId", "type": { "type": "string", "logicalType": "uuid" } },
+            { "name": "CustomerId", "type": { "type": "string", "logicalType": "uuid" } },
+            {
+              "name": "OrderItems",
+              "displayName": "Order Items",
+              "type": {
+                "type": "array",
+                "items": {
+                  "type": "record",
+                  "name": "CheckoutDto",
+                  "displayName": "Checkout Item",
+                  "namespace": "ECommerceOS.Shared.DTOs",
+                  "fields": [
+                    { "name": "ProductId", "type": { "type": "string", "logicalType": "uuid" } },
+                    { "name": "SellerId", "type": { "type": "string", "logicalType": "uuid" } },
+                    { "name": "ImageUrl", "type": "string" },
+                    { "name": "Name", "type": "string" },
+                    { "name": "Description", "type": "string" },
+                    { "name": "Cost", "type": "string" },
+                    { "name": "Quantity", "type": "int" }
+                  ]
+                }
+              },
+              "default": []
+            },
+            { "name": "Version", "type": "int" },
+            { "name": "CreatedAt", "type": { "type": "long", "logicalType": "timestamp-millis" } }
+          ]
+        },
+        {
+          "type": "record",
+          "name": "OrderConfirmed",
+          "displayName": "Order Confirmed",
+          "namespace": "ECommerceOS.Shared.Contracts.Messaging.Order",
+          "fields": [
+            { "name": "OrderId", "type": { "type": "string", "logicalType": "uuid" } },
+            { "name": "TransactionId", "type": { "type": "string", "logicalType": "uuid" } },
+            { "name": "CustomerId", "type": { "type": "string", "logicalType": "uuid" } },
+            {
+              "name": "OrderItems",
+              "displayName": "Order Items",
+              "type": {
+                "type": "array",
+                "items": {
+                  "type": "record",
+                  "name": "CheckoutDto",
+                  "displayName": "Checkout Item",
+                  "namespace": "ECommerceOS.Shared.DTOs",
+                  "fields": [
+                    { "name": "ProductId", "type": { "type": "string", "logicalType": "uuid" } },
+                    { "name": "SellerId", "type": { "type": "string", "logicalType": "uuid" } },
+                    { "name": "ImageUrl", "type": "string" },
+                    { "name": "Name", "type": "string" },
+                    { "name": "Description", "type": "string" },
+                    { "name": "Cost", "type": "string" },
+                    { "name": "Quantity", "type": "int" }
+                  ]
+                }
+              },
+              "default": []
+            },
+            { "name": "ExpectedDelivery", "type": { "type": "long", "logicalType": "timestamp-millis" } },
+            { "name": "Version", "type": "int" },
+            { "name": "CreatedAt", "type": { "type": "long", "logicalType": "timestamp-millis" } }
+          ]
+        },
+        {
+          "type": "record",
+          "name": "OrderFailed",
+          "displayName": "Order Failed",
+          "namespace": "ECommerceOS.Shared.Contracts.Messaging.Order",
+          "fields": [
+            { "name": "TransactionId", "type": { "type": "string", "logicalType": "uuid" } },
+            { "name": "CustomerId", "type": { "type": "string", "logicalType": "uuid" } },
+            {
+              "name": "OrderItems",
+              "displayName": "Order Items",
+              "type": {
+                "type": "array",
+                "items": {
+                  "type": "record",
+                  "name": "CheckoutDto",
+                  "displayName": "Checkout Item",
+                  "namespace": "ECommerceOS.Shared.DTOs",
+                  "fields": [
+                    { "name": "ProductId", "type": { "type": "string", "logicalType": "uuid" } },
+                    { "name": "SellerId", "type": { "type": "string", "logicalType": "uuid" } },
+                    { "name": "ImageUrl", "type": "string" },
+                    { "name": "Name", "type": "string" },
+                    { "name": "Description", "type": "string" },
+                    { "name": "Cost", "type": "string" },
+                    { "name": "Quantity", "type": "int" }
+                  ]
+                }
+              },
+              "default": []
+            },
+            { "name": "Reason", "type": ["null", "string"], "default": "null" },
+            { "name": "Version", "type": "int" },
+            { "name": "CreatedAt", "type": { "type": "long", "logicalType": "timestamp-millis" } }
+          ]
+        }
+      ]
+    },
+    { "name": "Attempts", "type": "int" },
+    { "name": "ErrorMessage", "type": ["null", "string"], "default": null },
+    { "name": "CreatedAt", "type": { "type": "long", "logicalType": "timestamp-millis" } }
+  ]
+}

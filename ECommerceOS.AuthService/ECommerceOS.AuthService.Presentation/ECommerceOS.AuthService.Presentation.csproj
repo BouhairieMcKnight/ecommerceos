@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\ECommerceOS.AuthService.Application\ECommerceOS.AuthService.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="10.0.5" />
+    <PackageReference Include="ZiggyCreatures.FusionCache" Version="2.6.0" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>ECommerceOS.AuthService.Api</RootNamespace>
+  </PropertyGroup>
+
+</Project>

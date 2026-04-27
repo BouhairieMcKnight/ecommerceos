@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option csharp_namespace = "ECommerceOS.CheckoutService";
+package ecommerceos_checkout_service_proto_service;
+
+service Checkout {
+  rpc GetCheckoutSession(GetCheckoutRequest) returns (GetCheckoutResponse);
+}
+
+message GetCheckoutRequest {
+  string idempotentId = 1;
+  string userId = 2;
+  repeated CheckoutRequestModel items = 3;
+}
+
+message CheckoutRequestModel {
+  string productId = 1;
+  string imageUrl = 2;
+  string name = 3;
+  string description = 4;
+  string sellerId = 5;
+  int32 quantity = 6;
+  MoneyModel price = 7;
+}
+
+
+message GetCheckoutResponse {
+  string client_secret = 1;
+  string error = 2;
+}
+
+message MoneyModel {
+  float amount = 1;
+  string currency = 2;
+}

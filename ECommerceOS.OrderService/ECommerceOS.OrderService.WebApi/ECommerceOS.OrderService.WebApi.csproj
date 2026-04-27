@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>aspnet-ECommerceOS.OrderService.WebApi-a2a8a595-7441-4070-a10f-5159a8ef0181</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.7" NoWarn="NU1605" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="10.0.0" NoWarn="NU1605"/>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.0"/>
+        <PackageReference Include="Microsoft.Identity.Web" Version="3.14.1"/>
+        <PackageReference Include="Microsoft.Identity.Web.DownstreamApi" Version="3.14.1"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ECommerceOS.OrderService.Presentation\ECommerceOS.OrderService.Presentation.csproj" />
+      <ProjectReference Include="..\ECommerceOS.OrderService.Application\ECommerceOS.OrderService.Application.csproj" />
+      <ProjectReference Include="..\ECommerceOS.OrderService.Infrastructure\ECommerceOS.OrderService.Infrastructure.csproj" />
+      <ProjectReference Include="..\..\ECommerceOS.ServiceDefaults\ECommerceOS.ServiceDefaults.csproj" />
+    </ItemGroup>
+
+</Project>

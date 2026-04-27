@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>aspnet-ECommerceOS.PaymentService.WebApi-b84ac59a-a3ca-4576-8036-254e7df7907e</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.7" NoWarn="NU1605" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="10.0.0" NoWarn="NU1605"/>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.0"/>
+        <PackageReference Include="Microsoft.Identity.Web" Version="3.14.1"/>
+        <PackageReference Include="Microsoft.Identity.Web.DownstreamApi" Version="3.14.1"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ECommerceOS.PaymentService.Application\ECommerceOS.PaymentService.Application.csproj" />
+      <ProjectReference Include="..\ECommerceOS.PaymentService.Infrastructure\ECommerceOS.PaymentService.Infrastructure.csproj" />
+      <ProjectReference Include="..\ECommerceOS.PaymentService.Presentation\ECommerceOS.PaymentService.Presentation.csproj" />
+      <ProjectReference Include="..\..\ECommerceOS.ServiceDefaults\ECommerceOS.ServiceDefaults.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\ECommerceOS.Shared\ECommerceOS.Shared.csproj" />
+    </ItemGroup>
+
+</Project>

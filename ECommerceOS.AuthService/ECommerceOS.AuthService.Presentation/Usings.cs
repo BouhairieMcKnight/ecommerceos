@@ -1,0 +1,17 @@
+﻿global using ECommerceOS.AuthService.Application.Identity.Command.Register;
+global using MediatR;
+global using Microsoft.AspNetCore.Builder;
+global using Microsoft.AspNetCore.Http;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.AspNetCore.Routing;
+global using Microsoft.AspNetCore.Authentication;
+global using ECommerceOS.Shared.Result;
+global using ECommerceOS.AuthService.Api.Authentication;
+global using ECommerceOS.AuthService.Application.Identity.Command.Delete;
+global using ECommerceOS.AuthService.Application.Identity.Command.Login;
+global using ECommerceOS.AuthService.Application.Identity.Command.Logout;
+global using ECommerceOS.AuthService.Application.Identity.Command.Refresh;
+global using System.Security.Claims;
+global using ECommerceOS.AuthService.Application.Identity.Command.LoginOauth;
+global using ECommerceOS.Shared.ValueObjects;
+global using ECommerceOS.AuthService.Domain.Identity;

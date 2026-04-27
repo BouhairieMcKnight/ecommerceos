@@ -1,0 +1,10 @@
+﻿global using ECommerceOS.Shared.Result;
+global using ECommerceOS.Shared.ValueObjects;
+global using ECommerceOS.Shared.DTOs.Command;
+global using ECommerceOS.Shared.DTOs.Query;
+global using ECommerceOS.OrderService.Domain.Orders;
+global using MediatR;
+global using FluentValidation;
+global using Microsoft.Extensions.Logging;
+global using ECommerceOS.OrderService.Application.Common.Interfaces;
+global using ECommerceOS.Shared.Entity;

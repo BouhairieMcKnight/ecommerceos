@@ -1,0 +1,75 @@
+{
+  "type": "record",
+  "name": "CatalogEvent",
+  "displayName": "Catalog Event",
+  "namespace": "ECommerceOS.Shared.Contracts.Messaging.Catalog",
+  "fields": [
+    { "name": "MessageId", "displayName": "Event ID", "type": { "type": "string", "logicalType": "uuid" } },
+    {
+      "name": "ProcessedOn",
+      "type": [
+        "null",
+        {
+          "type": "long",
+          "logicalType": "timestamp-millis"
+        }
+      ],
+      "default": null
+    },
+    { "name": "Type", "type": "string" },
+    { "name": "IntegrationEvent",
+      "type": [
+        {
+          "namespace": "ECommerceOS.Shared.Contracts.Messaging.Catalog",
+          "type": "record",
+          "name": "CartCheckedOut",
+          "displayName": "Cart Checked Out",
+          "fields": [
+            { "name": "CartId", "type": { "type": "string", "logicalType": "uuid" } },
+            { "name": "CustomerId", "type": { "type": "string", "logicalType": "uuid" } },
+            {
+              "name": "Checkouts",
+              "displayName": "Checkout Items",
+              "type": {
+                "type": "array",
+                "items": {
+                  "type": "record",
+                  "name": "CheckoutDto",
+                  "displayName": "Checkout Item",
+                  "namespace": "ECommerceOS.Shared.DTOs",
+                  "fields": [
+                    { "name": "ProductId", "type": { "type": "string", "logicalType": "uuid" } },
+                    { "name": "SellerId", "type": { "type": "string", "logicalType": "uuid" } },
+                    { "name": "ImageUrl", "type": "string" },
+                    { "name": "Name", "type": "string" },
+                    { "name": "Description", "type": "string" },
+                    { "name": "Cost", "type": "string" },
+                    { "name": "Quantity", "type": "int" }
+                  ]
+                }
+              },
+              "default": []
+            },
+            { "name": "Version", "type": "int" },
+            { "name": "CreatedAt", "type": { "type": "long", "logicalType": "timestamp-millis" } }
+          ]
+        },
+        {
+          "type": "record",
+          "name": "InventoryReserved",
+          "displayName" : "Inventory Reserved",
+          "namespace": "ECommerceOS.Shared.Contracts.Messaging.Catalog",
+          "fields": [
+            { "name": "CartId", "type": { "type": "string", "logicalType": "uuid" } },
+            { "name": "OrderId", "type": { "type": "string", "logicalType": "uuid" } },
+            { "name": "Version", "type": "int" },
+            { "name": "CreatedAt", "type": { "type": "long", "logicalType": "timestamp-millis" } }
+          ]
+        }
+      ]
+    },
+    { "name": "Attempts", "type": "int" },
+    { "name": "ErrorMessage", "type": ["null", "string"], "default": null },
+    { "name": "CreatedAt", "type": { "type": "long", "logicalType": "timestamp-millis" } }
+  ]
+}

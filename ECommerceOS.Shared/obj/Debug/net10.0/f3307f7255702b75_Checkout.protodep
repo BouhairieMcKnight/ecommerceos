@@ -1,0 +1,2 @@
+obj/Debug/net10.0/Contracts/ProtoBuf/Checkout.cs \
+obj/Debug/net10.0/Contracts/ProtoBuf/CheckoutGrpc.cs: Contracts/ProtoBuf/Checkout.proto

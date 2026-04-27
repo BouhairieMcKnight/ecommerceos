@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="ECommerceOS.PaymentService.Application/ECommerceOS.PaymentService.Application.csproj" />
+  <Project Path="ECommerceOS.PaymentService.Domain/ECommerceOS.PaymentService.Domain.csproj" />
+  <Project Path="ECommerceOS.PaymentService.Infrastructure/ECommerceOS.PaymentService.Infrastructure.csproj" />
+  <Project Path="ECommerceOS.PaymentService.Presentation\ECommerceOS.PaymentService.Presentation.csproj" />
+  <Project Path="ECommerceOS.PaymentService.WebApi/ECommerceOS.PaymentService.WebApi.csproj" />
+</Solution>

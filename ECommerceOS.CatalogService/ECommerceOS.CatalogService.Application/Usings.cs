@@ -1,0 +1,15 @@
+﻿global using ECommerceOS.Shared.DTOs.Command;
+global using ECommerceOS.Shared.DTOs.Query;
+global using ECommerceOS.Shared.Entity;
+global using ECommerceOS.Shared.Result;
+global using ECommerceOS.CatalogService.Domain.Products;
+global using FluentValidation;
+global using MediatR;
+global using Microsoft.Extensions.Logging;
+global using ECommerceOS.CatalogService.Domain.Categories;
+global using ECommerceOS.Shared.ValueObjects;
+global using ECommerceOS.CatalogService.Application.Common.Interfaces;
+global using System.Linq.Expressions;
+global using Mapster;
+global using ECommerceOS.CatalogService.Application.Common.Behaviors;
+global using Microsoft.Extensions.DependencyInjection;

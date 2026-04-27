@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)mono.texttemplating/3.0.0/buildTransitive/Mono.TextTemplating.targets" Condition="Exists('$(NuGetPackageRoot)mono.texttemplating/3.0.0/buildTransitive/Mono.TextTemplating.targets')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.extensions.telemetry.abstractions/10.1.0/buildTransitive/net8.0/Microsoft.Extensions.Telemetry.Abstractions.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.telemetry.abstractions/10.1.0/buildTransitive/net8.0/Microsoft.Extensions.Telemetry.Abstractions.targets')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.extensions.http.resilience/10.1.0/buildTransitive/net8.0/Microsoft.Extensions.Http.Resilience.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.http.resilience/10.1.0/buildTransitive/net8.0/Microsoft.Extensions.Http.Resilience.targets')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.codeanalysis.analyzers/3.11.0/buildTransitive/Microsoft.CodeAnalysis.Analyzers.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.codeanalysis.analyzers/3.11.0/buildTransitive/Microsoft.CodeAnalysis.Analyzers.targets')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.openapi/10.0.0/build/Microsoft.AspNetCore.OpenApi.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.openapi/10.0.0/build/Microsoft.AspNetCore.OpenApi.targets')" />
+    <Import Project="$(NuGetPackageRoot)aspire.stackexchange.redis/13.2.3/buildTransitive/net10.0/Aspire.StackExchange.Redis.targets" Condition="Exists('$(NuGetPackageRoot)aspire.stackexchange.redis/13.2.3/buildTransitive/net10.0/Aspire.StackExchange.Redis.targets')" />
+    <Import Project="$(NuGetPackageRoot)aspire.stackexchange.redis.distributedcaching/13.2.3/buildTransitive/net10.0/Aspire.StackExchange.Redis.DistributedCaching.targets" Condition="Exists('$(NuGetPackageRoot)aspire.stackexchange.redis.distributedcaching/13.2.3/buildTransitive/net10.0/Aspire.StackExchange.Redis.DistributedCaching.targets')" />
+    <Import Project="$(NuGetPackageRoot)aspire.npgsql.entityframeworkcore.postgresql/13.2.3/buildTransitive/net10.0/Aspire.Npgsql.EntityFrameworkCore.PostgreSQL.targets" Condition="Exists('$(NuGetPackageRoot)aspire.npgsql.entityframeworkcore.postgresql/13.2.3/buildTransitive/net10.0/Aspire.Npgsql.EntityFrameworkCore.PostgreSQL.targets')" />
+    <Import Project="$(NuGetPackageRoot)aspire.npgsql/13.2.3/buildTransitive/net10.0/Aspire.Npgsql.targets" Condition="Exists('$(NuGetPackageRoot)aspire.npgsql/13.2.3/buildTransitive/net10.0/Aspire.Npgsql.targets')" />
+    <Import Project="$(NuGetPackageRoot)aspire.confluent.kafka/13.2.2/buildTransitive/net10.0/Aspire.Confluent.Kafka.targets" Condition="Exists('$(NuGetPackageRoot)aspire.confluent.kafka/13.2.2/buildTransitive/net10.0/Aspire.Confluent.Kafka.targets')" />
+    <Import Project="$(NuGetPackageRoot)aspire.azure.storage.blobs/13.2.2/buildTransitive/net10.0/Aspire.Azure.Storage.Blobs.targets" Condition="Exists('$(NuGetPackageRoot)aspire.azure.storage.blobs/13.2.2/buildTransitive/net10.0/Aspire.Azure.Storage.Blobs.targets')" />
+  </ImportGroup>
+</Project>

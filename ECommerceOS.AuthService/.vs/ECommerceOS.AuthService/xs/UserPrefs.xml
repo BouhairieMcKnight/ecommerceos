@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{7436FF0C-94DD-4572-85F8-A247542C041B}|https">
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ECommerceOS.AuthService" expanded="True">
+            <Node name="ECommerceOS.AuthService" expanded="True">
+              <Node name="ConnectedServicesFolder" expanded="True" />
+              <Node name="Dependencies" expanded="True">
+                <Node name="ProjectDependencies" expanded="True">
+                  <Node name="ECommerceOS.Shared" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.ECommerceOS.AuthService PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

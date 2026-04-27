@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="ECommerceOS.OrderService.Application/ECommerceOS.OrderService.Application.csproj" />
+  <Project Path="ECommerceOS.OrderService.Domain/ECommerceOS.OrderService.Domain.csproj" />
+  <Project Path="ECommerceOS.OrderService.Infrastructure/ECommerceOS.OrderService.Infrastructure.csproj" />
+  <Project Path="ECommerceOS.OrderService.Presentation\ECommerceOS.OrderService.Presentation.csproj" />
+  <Project Path="ECommerceOS.OrderService.WebApi/ECommerceOS.OrderService.WebApi.csproj" />
+</Solution>

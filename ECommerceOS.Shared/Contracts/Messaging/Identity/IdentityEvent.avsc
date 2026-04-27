@@ -1,0 +1,46 @@
+{
+  "type": "record",
+  "name": "IdentityEvent",
+  "displayName": "IdentityEvent",
+  "namespace": "ECommerceOS.Shared.Contracts.Messaging.Identity",
+  "fields": [
+    { "name": "MessageId", "displayName": "Event ID", "type": "string" },
+    { "name": "ProcessedOn", "type": ["null", "long"], "default": null },
+    { "name": "Type", "type": "string" },
+    { "name": "IntegrationEvent",
+      "type": [
+        "null",
+        {
+          "type": "record",
+          "name": "UserRegistered",
+          "displayName": "User Registered",
+          "namespace": "ECommerceOS.Shared.Contracts.Messaging.Identity",
+          "fields": [
+            { "name": "UserId", "type": "string" },
+            { "name": "Email", "type": "string" },
+            { "name": "Name", "type": "string" },
+            { "name": "Version", "type": "int" },
+            { "name": "CreatedAt", "type": "long" }
+          ]
+        },
+        {
+          "type": "record",
+          "name": "UserEmailVerified",
+          "displayName": "User Email Verified",
+          "namespace": "ECommerceOS.Shared.Contracts.Messaging.Identity",
+          "fields": [
+            { "name": "UserId", "type": "string" },
+            { "name": "Email", "type": "string" },
+            { "name": "Name", "type": "string" },
+            { "name": "Version", "type": "int" },
+            { "name": "CreatedAt", "type": "long" }
+          ]
+        }
+      ],
+      "default": null
+    },
+    { "name": "Attempts", "type": "int" },
+    { "name": "ErrorMessage", "type": ["null", "string"], "default": null },
+    { "name": "CreatedAt", "type": "long" }
+  ]
+}

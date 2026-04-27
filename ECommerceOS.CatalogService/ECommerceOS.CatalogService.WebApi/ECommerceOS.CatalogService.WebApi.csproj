@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>aspnet-ECommerceOS.CatalogService.WebApi-8240ffdb-8fa0-4e91-8471-7768d7201d4d</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Grpc" Version="2.46.6" />
+        <PackageReference Include="Grpc.AspNetCore.Server" Version="2.76.0" />
+        <PackageReference Include="Grpc.Core" Version="2.46.6" />
+        <PackageReference Include="Grpc.Net.ClientFactory" Version="2.76.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.7" NoWarn="NU1605" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="10.0.0" NoWarn="NU1605" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.7">
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+          <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Identity.Web" Version="3.14.1" />
+        <PackageReference Include="Microsoft.Identity.Web.DownstreamApi" Version="3.14.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ECommerceOS.CatalogService.Application\ECommerceOS.CatalogService.Application.csproj" />
+      <ProjectReference Include="..\ECommerceOS.CatalogService.Infrastructure\ECommerceOS.CatalogService.Infrastructure.csproj" />
+      <ProjectReference Include="..\ECommerceOS.CatalogService.Presentation\ECommerceOS.CatalogService.Presentation.csproj" />
+      <ProjectReference Include="..\..\ECommerceOS.ServiceDefaults\ECommerceOS.ServiceDefaults.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\ECommerceOS.Shared\ECommerceOS.Shared.csproj" />
+    </ItemGroup>
+
+</Project>

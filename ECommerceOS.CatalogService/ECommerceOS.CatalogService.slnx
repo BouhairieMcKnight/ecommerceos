@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="ECommerceOS.CatalogService.Application/ECommerceOS.CatalogService.Application.csproj" />
+  <Project Path="ECommerceOS.CatalogService.Domain/ECommerceOS.CatalogService.Domain.csproj" />
+  <Project Path="ECommerceOS.CatalogService.Infrastructure/ECommerceOS.CatalogService.Infrastructure.csproj" />
+  <Project Path="ECommerceOS.CatalogService.Presentation\ECommerceOS.CatalogService.Presentation.csproj" />
+  <Project Path="ECommerceOS.CatalogService.WebApi/ECommerceOS.CatalogService.WebApi.csproj" />
+</Solution>

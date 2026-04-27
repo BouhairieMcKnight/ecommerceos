@@ -1,0 +1,13 @@
+/Users/mcknight/dev/ECommerceOS/ECommerceOS/ECommerceOS.ServiceDefaults/bin/Debug/net10.0/ECommerceOS.ServiceDefaults.deps.json
+/Users/mcknight/dev/ECommerceOS/ECommerceOS/ECommerceOS.ServiceDefaults/bin/Debug/net10.0/ECommerceOS.ServiceDefaults.dll
+/Users/mcknight/dev/ECommerceOS/ECommerceOS/ECommerceOS.ServiceDefaults/bin/Debug/net10.0/ECommerceOS.ServiceDefaults.pdb
+/Users/mcknight/dev/ECommerceOS/ECommerceOS/ECommerceOS.ServiceDefaults/obj/Debug/net10.0/ECommerceOS.ServiceDefaults.csproj.AssemblyReference.cache
+/Users/mcknight/dev/ECommerceOS/ECommerceOS/ECommerceOS.ServiceDefaults/obj/Debug/net10.0/ECommerceOS.ServiceDefaults.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mcknight/dev/ECommerceOS/ECommerceOS/ECommerceOS.ServiceDefaults/obj/Debug/net10.0/ECommerceOS.ServiceDefaults.AssemblyInfoInputs.cache
+/Users/mcknight/dev/ECommerceOS/ECommerceOS/ECommerceOS.ServiceDefaults/obj/Debug/net10.0/ECommerceOS.ServiceDefaults.AssemblyInfo.cs
+/Users/mcknight/dev/ECommerceOS/ECommerceOS/ECommerceOS.ServiceDefaults/obj/Debug/net10.0/ECommerceOS.ServiceDefaults.csproj.CoreCompileInputs.cache
+/Users/mcknight/dev/ECommerceOS/ECommerceOS/ECommerceOS.ServiceDefaults/obj/Debug/net10.0/ECommerceOS.ServiceDefaults.dll
+/Users/mcknight/dev/ECommerceOS/ECommerceOS/ECommerceOS.ServiceDefaults/obj/Debug/net10.0/refint/ECommerceOS.ServiceDefaults.dll
+/Users/mcknight/dev/ECommerceOS/ECommerceOS/ECommerceOS.ServiceDefaults/obj/Debug/net10.0/ECommerceOS.ServiceDefaults.pdb
+/Users/mcknight/dev/ECommerceOS/ECommerceOS/ECommerceOS.ServiceDefaults/obj/Debug/net10.0/ref/ECommerceOS.ServiceDefaults.dll
+/Users/mcknight/dev/ECommerceOS/ECommerceOS/ECommerceOS.ServiceDefaults/obj/Debug/net10.0/ECommerceOS.ServiceDefaults.sourcelink.json
