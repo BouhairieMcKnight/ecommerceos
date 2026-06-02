@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option csharp_namespace = "ECommerceOS.ReservationService";
+package ecommerceos_reservation_service_proto_service;
+
+import "google/protobuf/wrappers.proto";
+
+service Reserve {
+  rpc ReserveInventory(ReserveInventoryRequest) returns (ReservationResponse);
+}
+
+message ReserveInventoryRequest {
+  string idempotentId = 1;
+  string userId = 2;
+  repeated ReservationRequestModel items = 3;
+}
+
+message ReservationRequestModel {
+  string productId = 1;
+  int32 quantity = 2;
+}
+
+
+message ReservationResponse {
+  string error = 1;
+}

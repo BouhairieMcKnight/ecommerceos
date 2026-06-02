@@ -1,0 +1,13 @@
+global using MediatR;
+global using ECommerceOS.PaymentService.Application.Transactions.Query.GetTransactionStatus;
+global using ECommerceOS.Shared.Result;
+global using Microsoft.AspNetCore.Builder;
+global using Microsoft.AspNetCore.Http;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.AspNetCore.Routing;
+global using ECommerceOS.PaymentService.Application.Common.Interfaces;
+global using ECommerceOS.Shared.ValueObjects;
+global using ECommerceOS.PaymentService.Application.Transactions.Command;
+global using System.Security.Claims;
+global using ECommerceOS.CheckoutService;
+global using Grpc.Core;

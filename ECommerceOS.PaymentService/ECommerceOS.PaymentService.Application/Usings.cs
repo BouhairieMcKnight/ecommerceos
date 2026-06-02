@@ -1,0 +1,11 @@
+﻿global using ECommerceOS.Shared.DTOs.Command;
+global using ECommerceOS.Shared.ValueObjects;
+global using ECommerceOS.PaymentService.Domain.Payments;
+global using ECommerceOS.PaymentService.Domain.Transactions;
+global using ECommerceOS.Shared.Entity;
+global using ECommerceOS.Shared.DTOs.Query;
+global using ECommerceOS.Shared.Result;
+global using MediatR;
+global using FluentValidation;
+global using Microsoft.Extensions.Logging;
+global using ECommerceOS.PaymentService.Application.Common.Interfaces;

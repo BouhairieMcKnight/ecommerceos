@@ -1,0 +1,10 @@
+﻿global using Microsoft.AspNetCore.Http;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.AspNetCore.Routing;
+global using MediatR;
+global using Microsoft.AspNetCore.Builder;
+global using ECommerceOS.Shared.ValueObjects;
+global using ECommerceOS.OrderService.Application.Orders.Command.CancelOrder;
+global using ECommerceOS.Shared.Result;
+global using ECommerceOS.OrderService.Application.Orders.Query.GetPaginatedOrders;
+global using ECommerceOS.OrderService.Presentation.Http;

@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="ECommerceOS.AppHost/ECommerceOS.AppHost.csproj" />
+  <Project Path="ECommerceOS.AuthService/ECommerceOS.AuthService.WebApi/ECommerceOS.AuthService.WebApi.csproj" />
+  <Project Path="ECommerceOS.CatalogService/ECommerceOS.CatalogService.WebApi/ECommerceOS.CatalogService.WebApi.csproj" />
+  <Project Path="ECommerceOS.OrderService/ECommerceOS.OrderService.WebApi/ECommerceOS.OrderService.WebApi.csproj" />
+  <Project Path="ECommerceOS.PaymentService/ECommerceOS.PaymentService.WebApi/ECommerceOS.PaymentService.WebApi.csproj" />
+  <Project Path="ECommerceOS.ServiceDefaults/ECommerceOS.ServiceDefaults.csproj" />
+  <Project Path="ECommerceOS.Shared/ECommerceOS.Shared.csproj" />
+</Solution>

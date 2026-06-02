@@ -1,0 +1,17 @@
+﻿global using Microsoft.AspNetCore.Builder;
+global using Microsoft.AspNetCore.Http;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.AspNetCore.Routing;
+global using MediatR;
+global using ECommerceOS.Shared.ValueObjects;
+global using ECommerceOS.CatalogService.Presentation.Product.Delete;
+global using ECommerceOS.CatalogService.Presentation.Product.GetById;
+global using ECommerceOS.CatalogService.Presentation.Product.GetPaginatedProducts;
+global using ECommerceOS.CatalogService.Presentation.Product.Post;
+global using ECommerceOS.CatalogService.Application.Products.Command.DeleteProduct;
+global using ECommerceOS.Shared.Result;
+global using Microsoft.AspNetCore.Diagnostics;
+global using Microsoft.Extensions.Logging;
+global using Microsoft.Extensions.DependencyInjection;
+global using ECommerceOS.CatalogService.Application.Products.Command.CreateProduct;
+global using ECommerceOS.CatalogService.Presentation.Http;

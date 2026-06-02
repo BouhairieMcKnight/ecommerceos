@@ -1,0 +1,12 @@
+﻿global using ECommerceOS.Shared.ValueObjects;
+global using ECommerceOS.Shared.Result;
+global using ECommerceOS.Shared.Entity;
+global using ECommerceOS.AuthService.Domain.Identity;
+global using ECommerceOS.Shared.DTOs.Command;
+global using ECommerceOS.Shared.DTOs.Query;
+global using Microsoft.Extensions.DependencyInjection;
+global using FluentValidation;
+global using ECommerceOS.AuthService.Application.Common.Interfaces;
+global using MediatR;
+global using Microsoft.Extensions.Logging;
+global using ECommerceOS.AuthService.Application.Common.Behaviors;
