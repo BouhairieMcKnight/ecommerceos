@@ -10,3 +10,4 @@ global using ECommerceOS.AuthService.Application.Common.Interfaces;
 global using MediatR;
 global using Microsoft.Extensions.Logging;
 global using ECommerceOS.AuthService.Application.Common.Behaviors;
+global using ECommerceOS.AuthService.Application.Identity.RefreshTokens;

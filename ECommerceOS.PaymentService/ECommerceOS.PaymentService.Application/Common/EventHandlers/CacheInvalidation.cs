@@ -1,12 +1,9 @@
 namespace ECommerceOS.PaymentService.Application.Common.EventHandlers;
 
-public class CacheInvalidation(
-    ICacheService cacheService) 
+public class CacheInvalidation(ICacheService cacheService) 
     : INotificationHandler<IDomainEvent>
 {
-    public async Task Handle(
-        IDomainEvent notification,
-        CancellationToken cancellationToken)
+    public async Task Handle(IDomainEvent notification, CancellationToken cancellationToken)
     {
         var tag = notification.Type;
         

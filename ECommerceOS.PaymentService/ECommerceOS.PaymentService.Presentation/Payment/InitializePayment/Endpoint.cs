@@ -1,4 +1,3 @@
-using ECommerceOS.PaymentService.Application.Payments.Command.InitializePayment;
 using ECommerceOS.PaymentService.Presentation.Http;
 using ECommerceOS.Shared.Result;
 

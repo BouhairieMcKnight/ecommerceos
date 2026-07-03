@@ -25,6 +25,12 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
                 tokens.ToTable("RefreshTokens");
                 tokens.WithOwner().HasForeignKey(token => token.UserId);
                 tokens.HasKey(token => new { token.Token, token.UserId });
+                tokens.Property(token => token.Token)
+                    .HasMaxLength(512);
+                tokens.Property(token => token.FamilyId)
+                    .HasMaxLength(64);
+                tokens.HasIndex(token => token.FamilyId);
+                tokens.HasIndex(token => token.ExpiresOn);
             });
         
         builder.Navigation(tokens => tokens.RefreshTokens)

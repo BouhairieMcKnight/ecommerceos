@@ -21,9 +21,8 @@ public static class Endpoint
         [FromServices] ISender sender,
         CancellationToken cancellationToken = default)
     {
-        var userId = httpContext.GetUserId();
         var refreshToken = httpContext.GetRefreshToken();
-        var command = new RefreshCommand(userId, refreshToken);
+        var command = new RefreshCommand(refreshToken);
 
         var result = await sender.Send(command, cancellationToken);
 

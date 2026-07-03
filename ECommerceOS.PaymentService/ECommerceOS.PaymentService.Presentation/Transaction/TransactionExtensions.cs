@@ -1,7 +1,7 @@
 using ECommerceOS.PaymentService.Presentation.Transaction.Cancel;
 using ECommerceOS.PaymentService.Presentation.Transaction.GetById;
 using ECommerceOS.PaymentService.Presentation.Transaction.GetStatus;
-using ECommerceOS.PaymentService.Presentation.Transaction.InitializeTransaction;
+using ECommerceOS.PaymentService.Presentation.Transaction.StartTransaction;
 
 namespace ECommerceOS.PaymentService.Presentation.Transaction;
 

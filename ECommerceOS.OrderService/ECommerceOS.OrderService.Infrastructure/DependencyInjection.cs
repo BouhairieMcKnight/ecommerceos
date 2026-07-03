@@ -1,6 +1,7 @@
 using Confluent.SchemaRegistry;
 using Confluent.SchemaRegistry.Serdes;
 using ECommerceOS.OrderService.Infrastructure.Background;
+using ECommerceOS.OrderService.Infrastructure.Auth;
 using ECommerceOS.OrderService.Infrastructure.Caching;
 using ECommerceOS.OrderService.Infrastructure.EmailService;
 using ECommerceOS.OrderService.Infrastructure.Grpc;
@@ -18,6 +19,8 @@ public static class DependencyInjection
     public static void AddInfrastructure(this WebApplicationBuilder builder)
     {
         builder.Services.AddAvroRegistrationExtension();
+        builder.Services.ConfigureOptions<JwtOptionsSetup>();
+        builder.Services.ConfigureOptions<JwtBearerOptionsSetup>();
         builder.Services.AddOptions<SmtpClientOptions>().Bind(builder.Configuration.GetSection(nameof(SmtpClientOptions)));
         builder.AddKafkaProducer<string, OrderEvent>("kafka", (sp, config) =>
         {

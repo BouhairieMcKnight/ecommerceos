@@ -32,7 +32,7 @@ public class IdempotencyBehavior<TRequest, TResponse>(
 
         if (typeof(TResponse) == typeof(Result))
         {
-            return (TResponse)(object)Result.Failure(error);
+            return (TResponse)Result.Failure(error);
         }
 
         if (typeof(TResponse).IsGenericType &&

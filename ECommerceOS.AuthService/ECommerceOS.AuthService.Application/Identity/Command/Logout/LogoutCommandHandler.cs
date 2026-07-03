@@ -1,19 +1,29 @@
-using ECommerceOS.Shared.ValueObjects;
-
 namespace ECommerceOS.AuthService.Application.Identity.Command.Logout;
 
 public class LogoutCommandHandler(
-    IUserRepository userRepository) 
+    IUserRepository userRepository,
+    IRefreshTokenSessionService refreshTokenSessionService)
     : ICommandHandler<LogoutCommand>
 {
     public async Task<Result> Handle(LogoutCommand request, CancellationToken cancellationToken)
     {
-        var result = await userRepository.GetByIdAsync(request.UserId!, cancellationToken)
-            .Bind(u => u.ClearRefreshTokens())
-            .TapAsync(async u => await userRepository.UpdateAsync(u, cancellationToken));
+        if (string.IsNullOrWhiteSpace(request.RefreshToken))
+        {
+            return Result.Failure(IdentityErrors.NotValidCustomer);
+        }
 
-        return result.Match(
-            success => Result.Success(),
-            Result.Failure);
+        var userResult = await userRepository.GetByRefreshTokenAsync(request.RefreshToken, cancellationToken);
+
+        if (!userResult.IsSuccess)
+        {
+            return Result.Failure(userResult.Error!);
+        }
+
+        var user = userResult.Value!;
+        var result = refreshTokenSessionService.EndSession(user, request.RefreshToken);
+
+        await userRepository.UpdateAsync(user, cancellationToken);
+
+        return result.IsSuccess ? Result.Success() : Result.Failure(result.Error!);
     }
 }

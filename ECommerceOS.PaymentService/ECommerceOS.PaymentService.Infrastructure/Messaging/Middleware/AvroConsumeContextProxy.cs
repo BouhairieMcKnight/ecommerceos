@@ -3,18 +3,11 @@ using MassTransit.Context;
 
 namespace ECommerceOS.PaymentService.Infrastructure.Messaging.Middleware;
 
-public class AvroConsumeContextProxy<TAvro> :
-    ConsumeContextProxy
+public class AvroConsumeContextProxy<TAvro>(ConsumeContext context, Func<TAvro, object> propertySelector)
+    :
+        ConsumeContextProxy(context)
     where TAvro : class
 {
-    readonly Func<TAvro, object> _propertySelector;
-
-    public AvroConsumeContextProxy(ConsumeContext context, Func<TAvro, object> propertySelector)
-        : base(context)
-    {
-        _propertySelector = propertySelector;
-    }
-
     public override bool TryGetMessage<T>(out ConsumeContext<T> consumeContext)
     {
         if (base.TryGetMessage(out consumeContext))
@@ -22,7 +15,7 @@ public class AvroConsumeContextProxy<TAvro> :
 
         if (base.TryGetMessage<TAvro>(out ConsumeContext<TAvro>? messageContext))
         {
-            var messageProperty = _propertySelector(messageContext.Message);
+            var messageProperty = propertySelector(messageContext.Message);
             if (messageProperty is T message)
             {
                 consumeContext = new MessageConsumeContext<T>(this, message);

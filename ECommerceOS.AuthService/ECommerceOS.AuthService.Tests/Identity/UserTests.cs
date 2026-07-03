@@ -104,7 +104,7 @@ public class UserTests
     }
 
     [Fact]
-    public void RevokeRefreshToken_WhenTokenExists_ShouldRemoveToken_AndAddRevokedEvent()
+    public void RevokeRefreshToken_WhenTokenExists_ShouldMarkTokenRevoked_AndAddRevokedEvent()
     {
         var userResult = User.Create("Alice", Role.Customer, "alice@example.com");
         var user = Assert.IsType<User>(userResult.Value);
@@ -114,8 +114,60 @@ public class UserTests
         var revokeResult = user.RevokeRefreshToken("token-1");
 
         Assert.True(revokeResult.IsSuccess);
-        Assert.DoesNotContain(user.RefreshTokens, t => t.Token == "token-1");
+        Assert.Contains(user.RefreshTokens, t => t.Token == "token-1" && t.IsRevoked);
         Assert.Contains(user.DomainEvents, e => e is RevokedRefreshTokenDomainEvent);
+    }
+
+    [Fact]
+    public void RotateRefreshToken_WhenTokenExists_ShouldRevokeCurrentToken_AndCreateNextInSameFamily()
+    {
+        var userResult = User.Create("Alice", Role.Customer, "alice@example.com");
+        var user = Assert.IsType<User>(userResult.Value);
+        var createTokenResult = user.CreateRefreshToken("token-1");
+        var familyId = createTokenResult.Value!.FamilyId;
+        user.ClearDomainEvents();
+
+        var rotateResult = user.RotateRefreshToken("token-1", "token-2");
+
+        Assert.True(rotateResult.IsSuccess);
+        Assert.Contains(user.RefreshTokens, t => t.Token == "token-1" && t.IsRevoked);
+        Assert.Contains(user.RefreshTokens, t => t.Token == "token-2" && t.FamilyId == familyId && !t.IsRevoked);
+        Assert.Contains(user.DomainEvents, e => e is RevokedRefreshTokenDomainEvent);
+        Assert.Contains(user.DomainEvents, e => e is CreatedRefreshTokenDomainEvent);
+    }
+
+    [Fact]
+    public void RotateRefreshToken_WhenRevokedTokenIsReused_ShouldDeleteTokenFamily()
+    {
+        var userResult = User.Create("Alice", Role.Customer, "alice@example.com");
+        var user = Assert.IsType<User>(userResult.Value);
+        user.CreateRefreshToken("token-1");
+        user.RotateRefreshToken("token-1", "token-2");
+        user.ClearDomainEvents();
+
+        var rotateResult = user.RotateRefreshToken("token-1", "token-3");
+
+        Assert.False(rotateResult.IsSuccess);
+        Assert.Empty(user.RefreshTokens);
+        Assert.Contains(user.DomainEvents, e => e is DeletedRefreshTokenFamilyDomainEvent);
+    }
+
+    [Fact]
+    public void DeleteRefreshTokenFamily_WhenTokenExists_ShouldRemoveOnlyThatFamily()
+    {
+        var userResult = User.Create("Alice", Role.Customer, "alice@example.com");
+        var user = Assert.IsType<User>(userResult.Value);
+        user.CreateRefreshToken("family-1-token-1");
+        user.RotateRefreshToken("family-1-token-1", "family-1-token-2");
+        user.CreateRefreshToken("family-2-token-1");
+        user.ClearDomainEvents();
+
+        var deleteResult = user.DeleteRefreshTokenFamily("family-1-token-2");
+
+        Assert.True(deleteResult.IsSuccess);
+        Assert.DoesNotContain(user.RefreshTokens, t => t.Token.StartsWith("family-1", StringComparison.Ordinal));
+        Assert.Contains(user.RefreshTokens, t => t.Token == "family-2-token-1");
+        Assert.Contains(user.DomainEvents, e => e is DeletedRefreshTokenFamilyDomainEvent);
     }
 
     [Fact]

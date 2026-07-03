@@ -4,20 +4,13 @@ using MassTransit.Configuration;
 
 namespace ECommerceOS.PaymentService.Infrastructure.Messaging.Middleware;
 
-public class AvroUnionMessageTypeFilterPipeSpecification<TAvro> :
+public class AvroUnionMessageTypeFilterPipeSpecification<TAvro>(Func<TAvro, object> propertySelector) :
     IPipeSpecification<ConsumeContext>
     where TAvro : class, ISpecificRecord
 {
-    readonly Func<TAvro, object> _propertySelector;
-
-    public AvroUnionMessageTypeFilterPipeSpecification(Func<TAvro, object> propertySelector)
-    {
-        _propertySelector = propertySelector;
-    }
-
     public void Apply(IPipeBuilder<ConsumeContext> builder)
     {
-        builder.AddFilter(new AvroUnionMessageTypeFilter<TAvro>(_propertySelector));
+        builder.AddFilter(new AvroUnionMessageTypeFilter<TAvro>(propertySelector));
     }
 
     public IEnumerable<ValidationResult> Validate()

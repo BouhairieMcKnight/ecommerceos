@@ -2,11 +2,10 @@ namespace ECommerceOS.AuthService.Application.Identity.Command.Logout;
 
 public class LogoutCommandValidator : AbstractValidator<LogoutCommand>
 {
-    public LogoutCommandValidator(IUserRepository userRepository)
+    public LogoutCommandValidator()
     {
-        RuleFor(command => command.UserId)
-            .NotNull()
-            .MustAsync(async (id, ct) => id is not null && await userRepository.IsValidUserIdAsync(id, ct))
-            .WithMessage("Invalid user id");
+        RuleFor(command => command.RefreshToken)
+            .NotEmpty()
+            .WithMessage("Invalid refresh token");
     }
 }

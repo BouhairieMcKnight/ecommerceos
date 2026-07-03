@@ -1,6 +1,5 @@
 using ECommerceOS.PaymentService.Application;
 using ECommerceOS.PaymentService.Infrastructure;
-using ECommerceOS.PaymentService.Infrastructure.Persistence;
 using ECommerceOS.PaymentService.Presentation;
 using ECommerceOS.PaymentService.Presentation.GrpcServices;
 using ECommerceOS.PaymentService.Presentation.Payment;

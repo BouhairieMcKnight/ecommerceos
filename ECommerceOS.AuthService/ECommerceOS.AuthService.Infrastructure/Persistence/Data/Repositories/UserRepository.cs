@@ -4,7 +4,9 @@ public class UserRepository(IdentityDbContext dbContext) : IUserRepository
 {
     public async Task<Result<User>> GetByIdAsync(UserId id, CancellationToken ct = new CancellationToken())
     {
-        var user = await dbContext.Users.FirstOrDefaultAsync(u => u.Id == id, ct);
+        var user = await dbContext.Users
+            .Include(u => u.RefreshTokens)
+            .FirstOrDefaultAsync(u => u.Id == id, ct);
         
         return user is null ? Result<User>.Failure(IdentityErrors.CustomerNotFound) : Result<User>.Success(user);
     }
@@ -44,9 +46,26 @@ public class UserRepository(IdentityDbContext dbContext) : IUserRepository
 
     public async Task<Result<User>> GetUserByEmailAsync(string email, CancellationToken cancellationToken = default)
     {
-        var user = await dbContext.Users.FirstOrDefaultAsync(u => u.Email == email, cancellationToken);
+        var user = await dbContext.Users
+            .Include(u => u.RefreshTokens)
+            .FirstOrDefaultAsync(u => u.Email == email, cancellationToken);
         
         return user is null ? Result<User>.Failure(IdentityErrors.CustomerNotFound) : Result<User>.Success(user);
+    }
+
+    public async Task<Result<User>> GetByRefreshTokenAsync(
+        string refreshTokenId,
+        CancellationToken cancellationToken = default)
+    {
+        var user = await dbContext.Users
+            .Include(user => user.RefreshTokens)
+            .FirstOrDefaultAsync(
+                user => user.RefreshTokens.Any(token => token.Token == refreshTokenId),
+                cancellationToken);
+
+        return user is null
+            ? Result<User>.Failure(IdentityErrors.NotValidCustomer)
+            : Result<User>.Success(user);
     }
 
     public async Task<bool> IsValidUserIdAsync(UserId userId, CancellationToken cancellationToken = default)
@@ -67,8 +86,14 @@ public class UserRepository(IdentityDbContext dbContext) : IUserRepository
 
     public async Task<bool> IsValidRefreshTokenAsync(string refreshTokenId, CancellationToken ct = default)
     {
+        var now = DateTimeOffset.UtcNow;
+
         return await dbContext.Users
             .SelectMany(user => user.RefreshTokens)
-            .AnyAsync(token => token.Token == refreshTokenId, ct);
+            .AnyAsync(
+                token => token.Token == refreshTokenId &&
+                         !token.IsRevoked &&
+                         token.ExpiresOn > now,
+                ct);
     }
 }

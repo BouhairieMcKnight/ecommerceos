@@ -4,7 +4,7 @@ using ECommerceOS.PaymentService.Presentation.Http;
 using ECommerceOS.Shared.DTOs;
 using ECommerceOS.Shared.Result;
 
-namespace ECommerceOS.PaymentService.Presentation.Transaction.InitializeTransaction;
+namespace ECommerceOS.PaymentService.Presentation.Transaction.StartTransaction;
 
 public static class Endpoint
 {

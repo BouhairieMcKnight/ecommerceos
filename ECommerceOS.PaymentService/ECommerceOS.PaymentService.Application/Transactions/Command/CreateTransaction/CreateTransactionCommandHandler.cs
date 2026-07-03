@@ -1,6 +1,7 @@
 namespace ECommerceOS.PaymentService.Application.Transactions.Command.CreateTransaction;
 
-public class CreateTransactionCommandHandler(ITransactionRepository transactionRepository) : ICommandHandler<CreateTransactionCommand>
+public class CreateTransactionCommandHandler(ITransactionRepository transactionRepository) 
+    : ICommandHandler<CreateTransactionCommand>
 {
     public async Task<Result> Handle(CreateTransactionCommand request, CancellationToken cancellationToken)
     {

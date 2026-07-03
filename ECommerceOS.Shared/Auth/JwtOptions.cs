@@ -1,4 +1,5 @@
 using System.Text;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -9,7 +10,7 @@ public class JwtOptions
 {
     public string Issuer { get; init; } = string.Empty;
     public string Audience { get; init; } = string.Empty;
-    public string Secret { get; init; } = string.Empty;
+    private string Secret { get; init; } = string.Empty;
     public int ExpiresIn { get; init; } = 10;
     public SymmetricSecurityKey Key => new(Encoding.UTF8.GetBytes(Secret));
 }
@@ -31,13 +32,19 @@ public sealed record JwtOptionsSetup : IConfigureOptions<JwtOptions>
 }
 
 public sealed class JwtBearerOptionsSetup(IOptions<JwtOptions> jwtOptions) 
-    : IConfigureOptions<JwtBearerOptions>
+    : IConfigureOptions<JwtBearerOptions>, IConfigureOptions<AuthenticationOptions>
 {
     private readonly JwtOptions _jwtOptions = jwtOptions.Value;
 
+    public void Configure(AuthenticationOptions options)
+    {
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    }
+    
     public void Configure(JwtBearerOptions options)
     {
-        options.TokenValidationParameters = new()
+        options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidIssuer = _jwtOptions.Issuer,
             ValidAudience = _jwtOptions.Audience,
@@ -49,4 +56,5 @@ public sealed class JwtBearerOptionsSetup(IOptions<JwtOptions> jwtOptions)
             ClockSkew = TimeSpan.Zero
         };
     }
+
 }

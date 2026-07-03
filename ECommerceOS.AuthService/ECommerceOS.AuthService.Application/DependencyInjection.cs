@@ -6,6 +6,7 @@ public static class DependencyInjection
 {
     public static void AddApplication(this IServiceCollection services)
     {
+        services.AddScoped<IRefreshTokenSessionService, RefreshTokenSessionService>();
         services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly);
         services.AddMediatR(config =>
         {

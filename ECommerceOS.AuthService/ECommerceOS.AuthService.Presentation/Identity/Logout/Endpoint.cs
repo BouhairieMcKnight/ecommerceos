@@ -16,9 +16,7 @@ public static class Endpoint
         [FromServices] ISender sender,
         CancellationToken cancellationToken = default)
     {
-        var userId = httpContext.GetUserId();
-        
-        var command = new LogoutCommand(userId);
+        var command = new LogoutCommand(httpContext.GetRefreshToken());
 
         var result = await sender.Send(command, cancellationToken);
 

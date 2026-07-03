@@ -1,5 +1,3 @@
-using Aspire.Hosting.Yarp;
-using Aspire.Hosting.Yarp.Transforms;
 using Confluent.Kafka;
 using Confluent.Kafka.Admin;
 using ECommerceOS.AppHost;
@@ -112,25 +110,15 @@ var orderService = builder.AddProject<Projects.ECommerceOS_OrderService_WebApi>(
     .WithReference(schemaRegistry)
     .WaitFor(schemaRegistry);
 
-var gateway = builder.AddYarp("gateway")
-    .WithHttpsEndpoint(port: 8001, targetPort: 8001)
-    .WithConfiguration(yarp =>
-    {
-        yarp.AddRoute("/api/payment/{**catch-all}", paymentService)
-            .WithTransformPathRemovePrefix("/api/payment/");
-
-        yarp.AddRoute("/webhook", paymentService)
-            .WithTransformPathRemovePrefix("/webhook")
-            .WithTransformPathSet("/stripe/webhook-endpoint");
-
-        yarp.AddRoute("/api/auth/{**catch-all}", authService)
-            .WithTransformPathRemovePrefix("/api");
-        
-        yarp.AddRoute("/api/order/{**catch-all}", orderService)
-            .WithTransformPathRemovePrefix("/api");
-        
-        yarp.AddRoute("/api/catalog/{**catch-all}", catalogService)
-            .WithTransformPathRemovePrefix("/api");
-    });
+var gateway = builder.AddProject<Projects.ECommerceOS_OcelotApi>("gateway")
+    .WithHttpsEndpoint(port: 8001)
+    .WithReference(authService)
+    .WaitFor(authService)
+    .WithReference(paymentService)
+    .WaitFor(paymentService)
+    .WithReference(catalogService)
+    .WaitFor(catalogService)
+    .WithReference(orderService)
+    .WaitFor(orderService);
 
 builder.Build().Run();

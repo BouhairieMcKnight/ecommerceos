@@ -1,14 +1,17 @@
 namespace ECommerceOS.AuthService.Domain.Identity;
 
-public record RefreshToken
+public sealed class RefreshToken
 {
+    private static readonly TimeSpan DefaultLifetime = TimeSpan.FromDays(7);
+
     public string Token { get; private set; } = string.Empty;
-    public UserId UserId { get; init; }
-    public bool IsExpired => DateTimeOffset.Now >= CreateDate + ExpiresIn;
-    public bool IsRevoked { get; internal set; }
-    internal void Revoke() => IsRevoked = true;
-    public DateTimeOffset CreateDate { get; init; }
-    public TimeSpan ExpiresIn { get; init; }
+    public string FamilyId { get; private set; } = string.Empty;
+    public UserId UserId { get; private set; }
+    public bool IsExpired => DateTimeOffset.UtcNow >= ExpiresOn;
+    public bool IsRevoked { get; private set; }
+    public DateTimeOffset CreateDate { get; private set; }
+    public TimeSpan ExpiresIn { get; private set; }
+    public DateTimeOffset ExpiresOn { get; private set; }
 
     private RefreshToken()
     {
@@ -16,12 +19,26 @@ public record RefreshToken
 
     public static RefreshToken Create(string tokenId)
     {
+        return Create(tokenId, Guid.NewGuid().ToString("N"));
+    }
+
+    public static RefreshToken Create(string tokenId, string familyId)
+    {
+        var createdOn = DateTimeOffset.UtcNow;
+
         return new RefreshToken
         {
             Token = tokenId,
-            CreateDate = DateTimeOffset.Now,
-            ExpiresIn = TimeSpan.FromDays(7),
+            FamilyId = familyId,
+            CreateDate = createdOn,
+            ExpiresIn = DefaultLifetime,
+            ExpiresOn = createdOn.Add(DefaultLifetime),
             IsRevoked = false
         };
+    }
+
+    internal void Revoke()
+    {
+        IsRevoked = true;
     }
 }

@@ -10,6 +10,8 @@ public static class MiddlewareConfigurationExtensions
         Func<TAvro, object> propertySelector)
         where TAvro : class, ISpecificRecord
     {
-        configurator.AddPrePipeSpecification(new AvroUnionMessageTypeFilterPipeSpecification<TAvro>(propertySelector));
+        configurator.AddPrePipeSpecification(
+            new AvroUnionMessageTypeFilterPipeSpecification<TAvro>(propertySelector)
+        );
     }
 }

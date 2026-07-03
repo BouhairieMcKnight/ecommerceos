@@ -1,11 +1,8 @@
 using ECommerceOS.OrderService.Application;
 using ECommerceOS.OrderService.Infrastructure;
-using ECommerceOS.OrderService.Infrastructure.Persistence;
-using ECommerceOS.OrderService.Presentation;
 using ECommerceOS.OrderService.Presentation.Order;
 using ECommerceOS.ServiceDefaults;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 

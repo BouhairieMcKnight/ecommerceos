@@ -130,3 +130,25 @@ public record ClearRefreshTokensDomainEvent : IDomainEvent
         return clearRefreshTokensDomainEvent;
     } 
 }
+
+public record DeletedRefreshTokenFamilyDomainEvent : IDomainEvent
+{
+    public string Type => nameof(User);
+    public UserId UserId { get; private set; }
+    public DateTimeOffset OccurredOn { get; init; }
+    public string FamilyId { get; private set; } = string.Empty;
+
+    private DeletedRefreshTokenFamilyDomainEvent()
+    {
+    }
+
+    public static DeletedRefreshTokenFamilyDomainEvent Create(UserId userId, string familyId)
+    {
+        return new DeletedRefreshTokenFamilyDomainEvent
+        {
+            UserId = userId,
+            FamilyId = familyId,
+            OccurredOn = DateTimeOffset.UtcNow
+        };
+    }
+}
