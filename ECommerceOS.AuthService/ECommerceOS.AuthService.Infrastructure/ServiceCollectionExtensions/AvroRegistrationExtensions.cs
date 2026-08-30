@@ -1,8 +1,3 @@
-using Confluent.SchemaRegistry;
-using Confluent.SchemaRegistry.Serdes;
-using ECommerceOS.AuthService.Infrastructure.Messaging.Serialization;
-using ECommerceOS.Shared.Contracts.Messaging.Catalog;
-
 namespace ECommerceOS.AuthService.Infrastructure.ServiceCollectionExtensions;
 
 public static class AvroRegistrationExtensions

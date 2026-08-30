@@ -1,5 +1,4 @@
-using ECommerceOS.PaymentService.Domain.Payments;
-using Microsoft.EntityFrameworkCore;
+using ECommerceOS.Shared.Contracts.Messaging;
 
 namespace ECommerceOS.PaymentService.Infrastructure.Persistence;
 

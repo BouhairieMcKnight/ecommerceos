@@ -1,4 +1,3 @@
-using ECommerceOS.CheckoutService;
 using ECommerceOS.ReservationService;
 using Google.Protobuf.Collections;
 using Grpc.Net.ClientFactory;

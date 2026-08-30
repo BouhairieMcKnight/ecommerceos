@@ -1,8 +1,5 @@
 using ECommerceOS.PaymentService.Application.Transactions.Command.CancelTransaction;
-using ECommerceOS.PaymentService.Application.Transactions.Command.CreateTransaction;
-using ECommerceOS.PaymentService.Application.Transactions.EventHandlers;
 using ECommerceOS.PaymentService.Infrastructure.StateMachines;
-using ECommerceOS.Shared.Contracts.Messaging.Payment;
 using MassTransit;
 
 namespace ECommerceOS.PaymentService.Infrastructure.Consumers;

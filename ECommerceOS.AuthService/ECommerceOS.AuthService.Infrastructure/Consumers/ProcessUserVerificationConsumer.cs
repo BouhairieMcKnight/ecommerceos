@@ -1,6 +1,4 @@
 using ECommerceOS.AuthService.Infrastructure.Saga;
-using MassTransit;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using ZiggyCreatures.Caching.Fusion;
 
 namespace ECommerceOS.AuthService.Infrastructure.Consumers;

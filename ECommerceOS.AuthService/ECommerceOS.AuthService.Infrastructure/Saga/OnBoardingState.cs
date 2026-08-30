@@ -1,5 +1,3 @@
-using MassTransit;
-
 namespace ECommerceOS.AuthService.Infrastructure.Saga;
 
 public class OnBoardingState : SagaStateMachineInstance

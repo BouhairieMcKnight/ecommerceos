@@ -1,5 +1,4 @@
 using Avro.IO;
-using Avro.Specific;
 
 namespace ECommerceOS.AuthService.Infrastructure.Messaging.Serialization;
 

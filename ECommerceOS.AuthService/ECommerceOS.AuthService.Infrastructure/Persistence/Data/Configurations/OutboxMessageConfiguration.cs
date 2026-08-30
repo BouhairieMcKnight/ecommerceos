@@ -1,4 +1,4 @@
-using ECommerceOS.AuthService.Infrastructure.Persistence.Data.Models;
+using ECommerceOS.Shared.Contracts.Messaging;
 
 namespace ECommerceOS.AuthService.Infrastructure.Persistence.Data.Configurations;
 

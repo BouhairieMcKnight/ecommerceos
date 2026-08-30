@@ -1,5 +1,13 @@
-using MassTransit.KafkaIntegration;
-using Quartz;
+using ECommerceOS.Shared.Contracts.Messaging;
+
+// -----------------------------------------------------------------------------
+// This file was adapted from 'Implementing the Outbox Pattern',
+// part of Milan Jovanović's Blog.
+//
+//   Author:  Milan Jovanović, aka "m-jovanovic",
+//   Source:  https://milanjovanovic.tech/blog/implementing-the-outbox-pattern
+//
+// -----------------------------------------------------------------------------
 
 namespace ECommerceOS.AuthService.Infrastructure.Background;
 

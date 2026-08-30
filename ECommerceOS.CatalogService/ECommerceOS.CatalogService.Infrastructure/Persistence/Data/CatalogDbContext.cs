@@ -1,5 +1,5 @@
 using ECommerceOS.CatalogService.Domain.Carts;
-using ECommerceOS.Shared.Contracts.Messaging.Catalog;
+using ECommerceOS.Shared.Contracts.Messaging;
 
 namespace ECommerceOS.CatalogService.Infrastructure.Persistence.Data;
 

@@ -1,6 +1,3 @@
-using System.Security.Claims;
-using Microsoft.AspNetCore.Authentication;
-
 namespace ECommerceOS.AuthService.Infrastructure.Authentication;
 
 public class GoogleClaimTransformation(IUserRepository userRepository) : IClaimsTransformation

@@ -1,9 +1,17 @@
+// -----------------------------------------------------------------------------
+// This file was adapted from 'Implementing the Outbox Pattern',
+// part of Milan Jovanović's Blog.
+//
+//   Author:  Milan Jovanović, aka "m-jovanovic",
+//   Source:  https://milanjovanovic.tech/blog/implementing-the-outbox-pattern
+//
+// -----------------------------------------------------------------------------
+
 using System.Collections.Concurrent;
 using Dapper;
 using ECommerceOS.Shared.Contracts.Interfaces;
+using ECommerceOS.Shared.Contracts.Messaging;
 using ECommerceOS.Shared.Contracts.Messaging.Catalog;
-using ECommerceOS.Shared.Contracts.Messaging.Identity;
-using MassTransit;
 using Npgsql;
 using Quartz;
 

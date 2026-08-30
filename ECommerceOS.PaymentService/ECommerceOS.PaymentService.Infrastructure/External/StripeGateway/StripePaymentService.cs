@@ -1,8 +1,3 @@
-using System.Globalization;
-using ECommerceOS.PaymentService.Application.Common.Interfaces;
-using ECommerceOS.PaymentService.Infrastructure.Persistence.Data.Models;
-using ECommerceOS.Shared.Result;
-
 namespace ECommerceOS.PaymentService.Infrastructure.External.StripeGateway;
 
 public class StripePaymentService(

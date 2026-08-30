@@ -1,4 +1,5 @@
-using Avro;
+// TODO: Process payment to sellers after processing payments from the 
+
 using ECommerceOS.PaymentService.Application.Transactions.Command.CreateTransaction;
 using ECommerceOS.PaymentService.Infrastructure.Consumers;
 using ECommerceOS.PaymentService.Infrastructure.StateMachines;
@@ -102,8 +103,6 @@ public class StripeProcessor(
             CreatedAt = DateTime.UtcNow
             
         }, cancellationToken);
-
-
     }
 
     private async Task ProcessCheckoutCompletedAsync(Event stripeEvent, CancellationToken cancellationToken = default)

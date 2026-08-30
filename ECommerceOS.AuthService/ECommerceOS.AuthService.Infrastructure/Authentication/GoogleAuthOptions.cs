@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Google;
 
 namespace ECommerceOS.AuthService.Infrastructure.Authentication;

@@ -1,4 +1,4 @@
-namespace ECommerceOS.OrderService.Infrastructure.Persistence.Data.Models;
+namespace ECommerceOS.Shared.Contracts.Messaging;
 
 public record OutboxMessage
 {

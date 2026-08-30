@@ -1,7 +1,3 @@
-using Avro.Specific;
-using Confluent.SchemaRegistry;
-using Confluent.SchemaRegistry.Serdes;
-
 namespace ECommerceOS.AuthService.Infrastructure.Messaging.Serialization;
 
 public class MultipleTypeSerializer<T> : IAsyncSerializer<T>

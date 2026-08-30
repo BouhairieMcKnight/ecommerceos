@@ -1,4 +1,4 @@
-using ECommerceOS.OrderService.Infrastructure.Persistence.Data.Models;
+using ECommerceOS.Shared.Contracts.Messaging;
 
 namespace ECommerceOS.OrderService.Infrastructure.Persistence.Data.Configurations;
 

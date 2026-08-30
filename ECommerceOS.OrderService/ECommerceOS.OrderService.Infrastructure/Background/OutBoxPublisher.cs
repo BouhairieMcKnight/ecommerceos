@@ -1,7 +1,15 @@
-using ECommerceOS.OrderService.Infrastructure.Persistence.Data.Models;
+// -----------------------------------------------------------------------------
+// This file was adapted from 'Implementing the Outbox Pattern',
+// part of Milan Jovanović's Blog.
+//
+//   Author:  Milan Jovanović, aka "m-jovanovic",
+//   Source:  https://milanjovanovic.tech/blog/implementing-the-outbox-pattern
+//
+// -----------------------------------------------------------------------------
+
 using ECommerceOS.Shared.Contracts.Interfaces;
+using ECommerceOS.Shared.Contracts.Messaging;
 using ECommerceOS.Shared.Contracts.Messaging.Order;
-using MassTransit;
 using Quartz;
 
 namespace ECommerceOS.OrderService.Infrastructure.Background;

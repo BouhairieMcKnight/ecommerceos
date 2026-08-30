@@ -1,7 +1,5 @@
-using System.Reflection;
-using ECommerceOS.AuthService.Infrastructure.Persistence.Data.Models;
+using ECommerceOS.Shared.Contracts.Messaging;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ECommerceOS.AuthService.Infrastructure.Persistence;
 

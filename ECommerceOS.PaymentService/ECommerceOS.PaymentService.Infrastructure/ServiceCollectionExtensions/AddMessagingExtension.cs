@@ -4,11 +4,9 @@ using Confluent.SchemaRegistry.Serdes;
 using ECommerceOS.PaymentService.Infrastructure.Consumers;
 using ECommerceOS.PaymentService.Infrastructure.Messaging.Middleware;
 using ECommerceOS.PaymentService.Infrastructure.StateMachines;
-using ECommerceOS.Shared.Contracts.Interfaces;
 using ECommerceOS.Shared.Contracts.Messaging.Catalog;
 using ECommerceOS.Shared.Contracts.Messaging.Identity;
 using ECommerceOS.Shared.Contracts.Messaging.Order;
-using ECommerceOS.Shared.Contracts.Messaging.Payment;
 using MassTransit;
 
 namespace ECommerceOS.PaymentService.Infrastructure.ServiceCollectionExtensions;

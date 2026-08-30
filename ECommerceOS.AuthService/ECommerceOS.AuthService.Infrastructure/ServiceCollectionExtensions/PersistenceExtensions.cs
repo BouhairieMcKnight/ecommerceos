@@ -1,6 +1,4 @@
 using System.Reflection;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ECommerceOS.AuthService.Infrastructure.ServiceCollectionExtensions;
 

@@ -2,7 +2,6 @@ using ECommerceOS.Shared.Contracts.Messaging.Catalog;
 using ECommerceOS.Shared.Contracts.Messaging.Order;
 using ECommerceOS.Shared.Contracts.Messaging.Payment;
 using MassTransit;
-using MediatR;
 
 namespace ECommerceOS.OrderService.Infrastructure.StateMachines;
 

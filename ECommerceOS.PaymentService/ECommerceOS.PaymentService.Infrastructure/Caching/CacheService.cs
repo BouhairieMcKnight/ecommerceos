@@ -1,5 +1,3 @@
-using System.Text;
-using Microsoft.Extensions.Caching.Distributed;
 using ZiggyCreatures.Caching.Fusion;
 
 namespace ECommerceOS.PaymentService.Infrastructure.Caching;

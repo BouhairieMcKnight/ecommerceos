@@ -1,7 +1,5 @@
-using System.Reflection;
 using ECommerceOS.PaymentService.Infrastructure.Persistence.Data.Repositories;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ECommerceOS.PaymentService.Infrastructure.ServiceCollectionExtensions;
 

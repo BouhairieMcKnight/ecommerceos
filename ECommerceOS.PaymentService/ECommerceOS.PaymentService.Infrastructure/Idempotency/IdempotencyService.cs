@@ -1,5 +1,3 @@
-using ECommerceOS.PaymentService.Infrastructure.Persistence.Data.Models;
-
 namespace ECommerceOS.PaymentService.Infrastructure.Idempotency;
 
 public class IdempotencyService(

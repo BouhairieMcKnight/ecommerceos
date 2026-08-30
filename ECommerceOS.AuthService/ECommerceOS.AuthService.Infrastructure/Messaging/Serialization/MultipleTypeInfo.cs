@@ -1,6 +1,3 @@
-
-using Confluent.SchemaRegistry;
-using Confluent.SchemaRegistry.Serdes;
 using Schema = Avro.Schema;
 
 namespace ECommerceOS.AuthService.Infrastructure.Messaging.Serialization;

@@ -1,4 +1,3 @@
-using Avro.Specific;
 using MassTransit.Configuration;
 
 namespace ECommerceOS.AuthService.Infrastructure.Middleware;

@@ -1,5 +1,6 @@
+using ECommerceOS.PaymentService.Application.Payments.Command.InitializePayment;
 using ECommerceOS.PaymentService.Presentation.Http;
-using ECommerceOS.Shared.Result;
+
 
 namespace ECommerceOS.PaymentService.Presentation.Payment.InitializePayment;
 
@@ -31,6 +32,4 @@ public static class Endpoint
 
         return result.IsSuccess ? Results.Redirect(result.Value!) : result.ToProblemDetails();
     }
-    
-    
 }

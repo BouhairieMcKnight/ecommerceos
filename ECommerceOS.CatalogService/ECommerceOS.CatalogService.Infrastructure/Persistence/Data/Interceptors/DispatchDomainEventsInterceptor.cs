@@ -1,8 +1,16 @@
-using Confluent.SchemaRegistry.Serdes;
+// -----------------------------------------------------------------------------
+// This file was adapted from 'How To Use EF Core Interceptors',
+// part of Milan Jovanović's Blog.
+//
+//   Author:  Milan Jovanović, aka "m-jovanovic",
+//   Source:  https://milanjovanovic.tech/blog/how-to-use-ef-core-interceptors
+//
+// -----------------------------------------------------------------------------
+
 using ECommerceOS.CatalogService.Domain.Carts;
 using ECommerceOS.Shared.Contracts.Interfaces;
+using ECommerceOS.Shared.Contracts.Messaging;
 using ECommerceOS.Shared.Contracts.Messaging.Catalog;
-using Mapster;
 
 namespace ECommerceOS.CatalogService.Infrastructure.Persistence.Data.Interceptors;
 

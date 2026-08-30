@@ -1,4 +1,3 @@
-using ECommerceOS.PaymentService.Application.Transactions.Command.CreateTransaction;
 using ECommerceOS.Shared.Contracts.Messaging.Order;
 using ECommerceOS.Shared.Contracts.Messaging.Payment;
 using MassTransit;

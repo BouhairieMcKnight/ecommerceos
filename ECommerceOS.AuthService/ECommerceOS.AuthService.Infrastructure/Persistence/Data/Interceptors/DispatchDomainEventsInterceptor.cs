@@ -1,7 +1,13 @@
-using Confluent.SchemaRegistry.Serdes;
-using ECommerceOS.AuthService.Infrastructure.Persistence.Data.Models;
-using ECommerceOS.Shared.Contracts.Interfaces;
-using ECommerceOS.Shared.Contracts.Messaging.Identity;
+// -----------------------------------------------------------------------------
+// This file was adapted from 'How To Use EF Core Interceptors',
+// part of Milan Jovanović's Blog.
+//
+//   Author:  Milan Jovanović, aka "m-jovanovic",
+//   Source:  https://milanjovanovic.tech/blog/how-to-use-ef-core-interceptors
+//
+// -----------------------------------------------------------------------------
+
+using ECommerceOS.Shared.Contracts.Messaging;
 
 namespace ECommerceOS.AuthService.Infrastructure.Persistence.Data.Interceptors;
 

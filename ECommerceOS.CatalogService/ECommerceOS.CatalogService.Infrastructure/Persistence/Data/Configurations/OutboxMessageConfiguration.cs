@@ -1,3 +1,5 @@
+using ECommerceOS.Shared.Contracts.Messaging;
+
 namespace ECommerceOS.CatalogService.Infrastructure.Persistence.Data.Configurations;
 
 public class OutboxMessageConfiguration : IEntityTypeConfiguration<OutboxMessage>

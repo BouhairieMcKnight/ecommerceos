@@ -1,4 +1,3 @@
-using Confluent.Kafka.SyncOverAsync;
 using Confluent.SchemaRegistry;
 using Confluent.SchemaRegistry.Serdes;
 using ECommerceOS.PaymentService.Infrastructure.Caching;

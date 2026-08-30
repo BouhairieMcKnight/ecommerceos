@@ -1,5 +1,4 @@
 using ECommerceOS.Shared.DTOs;
-using Address = ECommerceOS.Shared.ValueObjects.Address;
 
 namespace ECommerceOS.PaymentService.Infrastructure.StateMachines;
 

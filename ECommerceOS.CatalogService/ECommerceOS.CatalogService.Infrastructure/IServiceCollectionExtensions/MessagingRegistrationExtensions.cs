@@ -1,10 +1,7 @@
-using Confluent.Kafka;
 using Confluent.Kafka.SyncOverAsync;
 using Confluent.SchemaRegistry;
 using Confluent.SchemaRegistry.Serdes;
 using ECommerceOS.CatalogService.Infrastructure.Messaging.Middleware;
-using ECommerceOS.Shared.Contracts.Interfaces;
-using ECommerceOS.Shared.Contracts.Messaging.Catalog;
 using ECommerceOS.Shared.Contracts.Messaging.Order;
 using MassTransit;
 

@@ -1,5 +1,3 @@
-using Avro.Specific;
-
 namespace ECommerceOS.AuthService.Infrastructure.Middleware;
 
 public static class MiddlewareConfigurationExtensions

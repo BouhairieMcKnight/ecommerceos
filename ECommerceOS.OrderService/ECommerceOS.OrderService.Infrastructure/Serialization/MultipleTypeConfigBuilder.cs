@@ -1,4 +1,3 @@
-using Avro.IO;
 using Avro.Specific;
 
 

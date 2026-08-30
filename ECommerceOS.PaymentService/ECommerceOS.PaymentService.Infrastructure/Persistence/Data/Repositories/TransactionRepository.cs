@@ -1,7 +1,3 @@
-using ECommerceOS.PaymentService.Application.Common.Interfaces;
-using ECommerceOS.Shared.Result;
-using Microsoft.EntityFrameworkCore.Storage;
-
 namespace ECommerceOS.PaymentService.Infrastructure.Persistence.Data.Repositories;
 
 public class TransactionRepository(PaymentDbContext dbContext) : ITransactionRepository

@@ -1,6 +1,5 @@
 using Confluent.SchemaRegistry;
 using Confluent.SchemaRegistry.Serdes;
-using Avro;
 using ECommerceOS.PaymentService.Infrastructure.Messaging.Serialization;
 using ECommerceOS.Shared.Contracts.Interfaces;
 using ECommerceOS.Shared.Contracts.Messaging.Payment;

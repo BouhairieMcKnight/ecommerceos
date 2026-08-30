@@ -1,5 +1,3 @@
-using ECommerceOS.AuthService.Infrastructure.Persistence.Data.Models;
-
 namespace ECommerceOS.AuthService.Infrastructure.Idempotency;
 
 public class IdempotencyService(

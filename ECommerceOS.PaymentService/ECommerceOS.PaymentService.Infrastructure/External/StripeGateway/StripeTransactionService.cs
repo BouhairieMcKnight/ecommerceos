@@ -1,4 +1,3 @@
-using ECommerceOS.PaymentService.Application.Common.Interfaces;
 using ECommerceOS.Shared.DTOs;
 
 namespace ECommerceOS.PaymentService.Infrastructure.External.StripeGateway;

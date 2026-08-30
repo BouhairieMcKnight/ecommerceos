@@ -1,10 +1,5 @@
-using Confluent.Kafka;
 using Confluent.Kafka.SyncOverAsync;
-using Confluent.SchemaRegistry;
-using Confluent.SchemaRegistry.Serdes;
-using ECommerceOS.AuthService.Infrastructure.Background;
 using ECommerceOS.AuthService.Infrastructure.Consumers;
-using ECommerceOS.AuthService.Infrastructure.Messaging.Serialization;
 using ECommerceOS.AuthService.Infrastructure.Middleware;
 using ECommerceOS.AuthService.Infrastructure.Saga;
 

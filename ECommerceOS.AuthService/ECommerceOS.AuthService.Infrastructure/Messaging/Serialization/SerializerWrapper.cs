@@ -1,5 +1,3 @@
-using Confluent.SchemaRegistry.Serdes;
-
 namespace ECommerceOS.AuthService.Infrastructure.Messaging.Serialization;
 
 internal class SerializerWrapper<T> : ISerializerWrapper

@@ -1,6 +1,5 @@
 using System.Net;
 using System.Net.Mail;
-using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace ECommerceOS.AuthService.Infrastructure.EmailService;
 
